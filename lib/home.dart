@@ -49,19 +49,20 @@ class _HomepageState extends State<Homepage> {
               ),
 
           
-            // ignore: unnecessary_const
-           const Center(
+            
+           Center(
+             
+            
               // ignore: unnecessary_const
-              child: const Container(
-                  padding: EdgeInsets.all(20.0),
-                  child:  Text('This is a Quiz Application',
+              child:  Text('This is a Quiz Application',
                   style: TextStyle(
                     fontSize: 15.0,
                     fontWeight: FontWeight.bold,
                   ),
                   ),
                 ),
-            ),
+          
+            
 
             ],
           ),
