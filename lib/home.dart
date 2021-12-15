@@ -11,7 +11,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  Widget customCard() {
+  Widget customCard(String languageName) {
+  
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: InkWell(
@@ -38,7 +39,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Center(
                   child: Text(
-                    'Python',
+                languageName,
                     style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 24,
@@ -75,12 +76,12 @@ class _HomepageState extends State<Homepage> {
       ),
       body: ListView(
         children: [
-          customCard(),
-          customCard(),
-          customCard(),
-          customCard(),
-          customCard(),
-          customCard()
+          customCard("Python"),
+          customCard("java"),
+          customCard("C"),
+          customCard("Javascript"),
+          customCard("C++"),
+          customCard("Dart")
         ],
       ),
     );
