@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -11,43 +8,51 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  Widget customCard(String languageName) {
-  
+  List<String> images = [
+    "assets/python.png",
+    "assets/java.jpg",
+    "assets/c.png",
+    "assets/javascript.png",
+    "assets/c++.png",
+    "assets/dart.jpg",
+  ];
+  Widget customCard(String languageName, String image) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: InkWell(
         child: Material(
           color: Colors.indigoAccent,
           elevation: 20.0,
-          child: Container(
+          child: SizedBox(
+            height: 300.0,
             child: Column(
-              children: const [
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.0),
-                  child: Material(
+              children: [
+                 Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child:  Material(
                     elevation: 5.0,
-                    borderRadius: BorderRadius.all(Radius.circular(100.0)),
+                    borderRadius: const BorderRadius.all(Radius.circular(100.0)),
                     child: ClipOval(
                         child: Image(
+                          fit: BoxFit.contain,
                       width: 200.0,
                       height: 200.0,
                       image: AssetImage(
-                        "assets/yisafa.jpg",
+                        image,
                       ),
                     )),
                   ),
                 ),
                 Center(
                   child: Text(
-                languageName,
-                    style: TextStyle(
+                    languageName,
+                    style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 24,
                         color: Colors.white),
                   ),
                 ),
-                Center(
-                  // ignore: unnecessary_const
+                const Center(
                   child: Text(
                     'This is a Quiz Application',
                     style: TextStyle(
@@ -76,16 +81,14 @@ class _HomepageState extends State<Homepage> {
       ),
       body: ListView(
         children: [
-          customCard("Python"),
-          customCard("java"),
-          customCard("C"),
-          customCard("Javascript"),
-          customCard("C++"),
-          customCard("Dart")
+          customCard("Python", images[0]),
+          customCard("java" ,images[1]),
+          customCard("C", images[2]),
+          customCard("Javascript", images[3]),
+          customCard("C++" ,images[4]),
+          customCard("Dart" ,images[5])
         ],
       ),
     );
   }
 }
-
-class Circular {}
